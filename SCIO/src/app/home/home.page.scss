@@ -29,3 +29,17 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+.spinner-container {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+ion-card {
+    text-align: center;
+}
+@media (min-width: 820px) {
+  ion-card {
+    width: 50%;
+    margin: 10px auto;
+  }
+}

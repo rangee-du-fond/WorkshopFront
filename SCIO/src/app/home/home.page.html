@@ -1,20 +1,52 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      Ionic Blank
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+    <ion-item>
+      <ion-label>Topics</ion-label>
+      <ion-select formControlName='topics' name='topics' multiple="true" cancelText="Nah" okText="Okay!">
+        <ion-select-option value="maths">Maths</ion-select-option>
+        <ion-select-option value="english">English</ion-select-option>
+        <ion-select-option value="physics">Physics</ion-select-option>
+        <ion-select-option value="biology">Biology</ion-select-option>
+        <ion-select-option value="french">French</ion-select-option>        
+      </ion-select>      
+    </ion-item>
+    <ion-item>
+      <ion-label>Levels</ion-label>
+      <ion-select formControlName='levels' name='levels' multiple="true" cancelText="Nah" okText="Okay!">
+        <ion-select-option value="3eme">3eme</ion-select-option>
+        <ion-select-option value="4eme">4eme</ion-select-option>
+        <ion-select-option value="5eme">5eme</ion-select-option>
+        <ion-select-option value="6eme">6eme</ion-select-option>
+      </ion-select>      
+    </ion-item>
+    <ion-button color='warning' type='submit' >Search</ion-button>
+  </form>
+
+
+      <ion-card block *ngFor="let item of items">
+        <ion-card-subtitle>created at : {{ item.createdAt }}</ion-card-subtitle>
+        <ion-card-title>
+      request number {{ item.id }}
+    </ion-card-title>
+    <ion-card-content>
+      <p>{{item.description}}</p>
+      <ion-button expand="block">show request</ion-button>
+    </ion-card-content>
+    <ion-chip>
+      <ion-label>{{item.course.level}}</ion-label>
+    </ion-chip>
+    <ion-chip>
+      <ion-label>{{item.course.topic}}</ion-label>
+    </ion-chip>  
+  </ion-card>
+
 </ion-content>
