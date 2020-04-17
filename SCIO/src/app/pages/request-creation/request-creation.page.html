@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Créer une demande de cours</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form  #form="ngForm" [formGroup]="ionicForm" (ngSubmit)="submitForm(form)"   novalidate>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-input formControlName='description' type='text' name='description' required></ion-input>
+    </ion-item>
+    <ion-label>Cours</ion-label>
+    <ion-item>
+      <ion-select formControlName='courses' name='courses' multiple="false" cancelText="Nah" okText="Okay!">
+        <ion-select-option *ngFor="let course of courses"
+         value="{{course.id}}">{{course.level_name}} | {{course.theme_name}}
+
+        </ion-select-option>
+      </ion-select>      
+    </ion-item>
+  <ion-button type='submit' expand="block"  routerDirection="forward">submit</ion-button>
+
+</form>
+</ion-content>

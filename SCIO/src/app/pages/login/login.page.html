@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form  #form="ngForm" [formGroup]="ionicForm" (ngSubmit)="submitForm(form)"   novalidate>
+
+  <ion-item>
+    <ion-label>email</ion-label>
+    <ion-input formControlName='email' type='email' name='email' required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label required>Password</ion-label>
+    <ion-input formControlName='password' name='password' type='password'></ion-input>
+  </ion-item>
+  <ion-button type='submit' expand="block"  routerDirection="forward">Home Page</ion-button>
+  <form>
+

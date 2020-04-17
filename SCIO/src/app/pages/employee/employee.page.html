@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>employee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-button expand='block' routerLink="/request-creation/{{employeeid}}" >Créer une demande de cours</ion-button>
+<ion-card block *ngFor="let meeting of meetings">
+  <ion-card-title>
+    {{meeting.description}}
+  </ion-card-title>
+
+</ion-card>
+</ion-content>

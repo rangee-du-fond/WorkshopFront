@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      SCIO Home Page 
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,7 +10,7 @@
 
   <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
     <ion-item>
-      <ion-label>Topics</ion-label>
+      <ion-label>Themes</ion-label>
       <ion-select formControlName='topics' name='topics' multiple="true" cancelText="Nah" okText="Okay!">
         <ion-select-option value="Mathématiques">Maths</ion-select-option>
         <ion-select-option value="Anglais">English</ion-select-option>
@@ -39,7 +39,7 @@
     </ion-card-title>
     <br>
     <ion-card-content>
-      <ion-button expand="block">show request</ion-button>
+      <ion-button expand="block" routerLink="/request-details/{{item.id}}" routerDirection="forward">show request</ion-button>
     </ion-card-content>
     <ion-chip>
       <ion-label>{{item.level_name}}</ion-label>
