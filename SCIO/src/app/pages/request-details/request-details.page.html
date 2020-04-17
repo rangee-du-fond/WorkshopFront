@@ -1,9 +1,35 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>request-details</ion-title>
+    <ion-title>Request details</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list>
+  <ion-label>Description</ion-label>
+  <ion-item>    
+     {{request?.description}}
+  </ion-item>
+  <ion-label>Creation Date</ion-label>
+  <ion-item>    
+     {{request?.created_at}}
+  </ion-item>
+  <ion-label>Course</ion-label>
+  <ion-item>    
+     {{request?.id_course}}
+  </ion-item>
+  <ion-label>Créateur</ion-label>
+  <ion-item>    
+     {{request?.id_employee}}
+  </ion-item>
+  <form  #form="ngForm" [formGroup]="ionicForm" (ngSubmit)="submitForm(form)"   novalidate>
+    <ion-item>
+      <ion-label>Meeting Description</ion-label>
+      <ion-input formControlName='description' type='text' name='description' required></ion-input>
+    </ion-item>
+    
+    <ion-button type='submit' expand="block"  routerDirection="forward">submit</ion-button>
 
+    </form>
+</ion-list>
 </ion-content>
