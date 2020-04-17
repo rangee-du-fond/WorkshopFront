@@ -15,16 +15,19 @@ export class HomePage implements OnInit {
   constructor(private dataService: DataService, public formBuilder: FormBuilder) {
   this.ionicForm = this.formBuilder.group({
     topics: ['', [Validators.required]],
-    levels: ['']
+    levels: ['']    
   })
+
   }
 
   ngOnInit() {
     
+
+
   }
 
   submitForm() {
-    this.items = this.dataService.filterItems(this.ionicForm.value.topics, this.ionicForm.value.levels);    
+    this.items = this.dataService.filterRequests(this.ionicForm.value.topics, this.ionicForm.value.levels);    
   }
 
 }

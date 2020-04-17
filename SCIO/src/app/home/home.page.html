@@ -12,40 +12,40 @@
     <ion-item>
       <ion-label>Topics</ion-label>
       <ion-select formControlName='topics' name='topics' multiple="true" cancelText="Nah" okText="Okay!">
-        <ion-select-option value="maths">Maths</ion-select-option>
-        <ion-select-option value="english">English</ion-select-option>
-        <ion-select-option value="physics">Physics</ion-select-option>
+        <ion-select-option value="Mathématiques">Maths</ion-select-option>
+        <ion-select-option value="Anglais">English</ion-select-option>
+        <ion-select-option value="Physique">Physics</ion-select-option>
         <ion-select-option value="biology">Biology</ion-select-option>
-        <ion-select-option value="french">French</ion-select-option>        
+        <ion-select-option value="Français">French</ion-select-option>        
       </ion-select>      
     </ion-item>
     <ion-item>
       <ion-label>Levels</ion-label>
       <ion-select formControlName='levels' name='levels' multiple="true" cancelText="Nah" okText="Okay!">
-        <ion-select-option value="3eme">3eme</ion-select-option>
-        <ion-select-option value="4eme">4eme</ion-select-option>
-        <ion-select-option value="5eme">5eme</ion-select-option>
-        <ion-select-option value="6eme">6eme</ion-select-option>
+        <ion-select-option value="3ème">3eme</ion-select-option>
+        <ion-select-option value="4ème">4eme</ion-select-option>
+        <ion-select-option value="5ème">5eme</ion-select-option>
+        <ion-select-option value="6ème">6eme</ion-select-option>
       </ion-select>      
     </ion-item>
-    <ion-button color='warning' type='submit' >Search</ion-button>
+    <ion-button expand="block" color='warning' type='submit' >Search</ion-button>
   </form>
 
 
       <ion-card block *ngFor="let item of items">
-        <ion-card-subtitle>created at : {{ item.createdAt }}</ion-card-subtitle>
+        <ion-card-subtitle>created at : {{ item.created_at }}</ion-card-subtitle>
         <ion-card-title>
-      request number {{ item.id }}
+          {{item.description}}
     </ion-card-title>
+    <br>
     <ion-card-content>
-      <p>{{item.description}}</p>
       <ion-button expand="block">show request</ion-button>
     </ion-card-content>
     <ion-chip>
-      <ion-label>{{item.course.level}}</ion-label>
+      <ion-label>{{item.level_name}}</ion-label>
     </ion-chip>
     <ion-chip>
-      <ion-label>{{item.course.topic}}</ion-label>
+      <ion-label>{{item.theme_name}}</ion-label>
     </ion-chip>  
   </ion-card>
 
